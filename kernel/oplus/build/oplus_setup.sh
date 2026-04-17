@@ -7,7 +7,7 @@ function init_build_environment() {
     export BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
     export DEFCONFIG_OVERLAYS="fpga.config oplus6989v2.config"
     export KERNEL_VERSION=kernel-6.1
-    export OPLUS_PLATFORM_INFO=k6989v1_64
+    export OPLUS_PLATFORM_INFO=k6989v2_64
     export OPLUS_FEATURES=""
     export OPLUS_USE_JFROG_CACHE="false"
     export OPLUS_USE_BUILDBUDDY_REMOTE_BUILD="false"
