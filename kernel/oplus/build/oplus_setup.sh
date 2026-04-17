@@ -5,7 +5,7 @@ function init_build_environment() {
     export CHIPSET_COMPANY=MTK
     export OPLUS_VND_BUILD_PLATFORM=MT6989
     export BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
-    export DEFCONFIG_OVERLAYS="fpga.config"
+    export DEFCONFIG_OVERLAYS="fpga.config oplus6989v2.config"
     export KERNEL_VERSION=kernel-6.1
     export OPLUS_PLATFORM_INFO=k6989v1_64
     export OPLUS_FEATURES=""
