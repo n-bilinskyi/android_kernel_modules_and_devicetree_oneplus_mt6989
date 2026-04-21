@@ -1,0 +1,23 @@
+# For all accepted properties, see BuildImage() in tools/releasetools/build_image.py
+mount_point=/my_engineering
+partition_name=my_engineering
+partition_name=my_engineering
+squashfs_sparse_flag=-s
+erofs_sparse_flag=-s
+fs_type=ext4
+journal_size=0
+extfs_sparse_flag=-s
+use_dynamic_partition_size=true
+block_list=out_hal/target/product/mgvi_64_armv82/obj/PACKAGING/my_engineering.aging_intermediates/my_engineering.aging.map
+ext_mkuserimg=mkuserimg_mke2fs
+erofs_mkuserimg=
+selinux_fc=out_hal/target/product/mgvi_64_armv82/obj/ETC/file_contexts.bin_intermediates/file_contexts.bin
+avb_avbtool=avbtool
+avb_key_path=oplus/build/make/tools/euclid/local_debug_keys/customkey_rsa2048.pem
+avb_algorithm=SHA256_RSA2048
+avb_hashtree_enable=true
+avb_add_hashtree_footer_args= --prop com.android.build.my_engineering.os_version:11 --prop com.android.build.my_engineering.security_patch:2025-08-01
+# Properties from vendor/oplus/build/make/tools/euclid/dict.txt
+#extfs_sparse_flag=-s
+journal_size=0
+extfs_rsv_pct=0
