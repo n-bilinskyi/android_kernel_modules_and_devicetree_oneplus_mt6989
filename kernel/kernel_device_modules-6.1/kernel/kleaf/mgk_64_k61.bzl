@@ -1022,5 +1022,7 @@ def get_overlay_modules_list():
         mgk_64_k61_device_modules.remove("drivers/power/supply/mt6375-battery.ko")
         mgk_64_k61_device_modules.remove("drivers/power/supply/mt6375-charger.ko")
         mgk_64_k61_device_modules.remove("kernel/oplus_cpu/sched/eas_opt/oplus_bsp_eas_opt.ko")
+        mgk_64_k61_kleaf_modules.remove("//vendor/mediatek/kernel_modules/fpsgo_cus:fpsgo_cus")
+        mgk_64_k61_kleaf_modules.remove("//vendor/mediatek/kernel_modules/fpsgo_int:fpsgo_int")
 
 get_overlay_modules_list()
