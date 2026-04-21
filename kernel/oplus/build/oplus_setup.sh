@@ -5,7 +5,7 @@ function init_build_environment() {
     export CHIPSET_COMPANY=MTK
     export OPLUS_VND_BUILD_PLATFORM=MT6989
     export BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
-    export DEFCONFIG_OVERLAYS="fpga.config oplus6989v2.config"
+    export DEFCONFIG_OVERLAYS="oplus6989v2.config"
     export KERNEL_VERSION=kernel-6.1
     export OPLUS_PLATFORM_INFO=k6989v2_64
     export OPLUS_FEATURES=""
@@ -57,9 +57,9 @@ function init_build_environment() {
     KERNEL_IMG=${TOPDIR}/kernel/bazel-bin/kernel_device_modules-${VERSION}/${KRN_MGK}_kernel_aarch64.${variants_type}
     MODULE_KO=${TOPDIR}/kernel/bazel-bin/kernel_device_modules-${VERSION}/${KRN_MGK}_customer_modules_install.${variants_type}
     dtb_support_list="mt6989"
-    dtbo_support_list="k6989v1_64 oplus6989_22113 oplus6989_23011"
+    dtbo_support_list="k6989v2_64"
     DWS_SRC=${TOPDIR}/vendor/mediatek/proprietary/tools/dct/dws/${dtb_support_list}
-    STRIP="${TOPDIR}/prebuilts/clang/host/linux-x86/llvm-binutils-stable/llvm-strip"
+    STRIP=${TOPDIR}/kernel/prebuilts/clang/host/linux-x86/clang-r487747c/bin/llvm-strip
     VENDOR_MODULES_DIR=${DIST_DIR}/kernel_device_modules-${VERSION}/${KRN_MGK}_customer_modules_install.${variants_type}
     SYSTEM_MODULES_DIR=${DIST_DIR}/kernel_device_modules-${VERSION}/${KRN_MGK}_kernel_aarch64.${variants_type}
     INTREE_MODULE_OUT=${TOPDIR}/kernel/bazel-bin/kernel_device_modules-${VERSION}/${KRN_MGK}_modules.${variants_type}
