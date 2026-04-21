@@ -144,8 +144,14 @@ modules_update() {
             echo "  [+] WARNING: Found OSS version of ${ko}"
             ${STRIP} -S ${current} -o ${RAMDISK_MOD_DIR}/${ko}
         else
-            echo "  [-] WARNING: Not found OSS version of ${ko}"
-            # rm ${RAMDISK_MOD_DIR}/${ko}
+            current=`find "${MODULES_DIR}/.." -name ${ko} -print -quit`
+            if [ -n "${current}" ]; then
+                echo "  [+] WARNING: Found OSS version of ${ko} in parent dir"
+                ${STRIP} -S ${current} -o ${RAMDISK_MOD_DIR}/${ko}
+            else
+                echo "  [-] WARNING: Not found OSS version of ${ko} (removed it)"
+                rm ${RAMDISK_MOD_DIR}/${ko}
+            fi
         fi
     done
     ko_list=`cat ${RAMDISK_MOD_DIR}/modules.load | xargs -L 1 basename`
