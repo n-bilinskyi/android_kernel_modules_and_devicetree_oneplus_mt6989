@@ -19,6 +19,18 @@
 #define PFX "TSREC"
 #define TSREC_LOG_DBG_DEF_CAT LOG_TSREC
 
+/******************************************************************************
+ * container_of_safe removed in linux 6.2, bring it here for compatibility
+ *****************************************************************************/
+#ifndef container_of_safe
+#define container_of_safe(ptr, type, member) ({				\
+	void *__mptr = (void *)(ptr);					\
+	static_assert(__same_type(*(ptr), ((type *)0)->member) ||	\
+		      __same_type(*(ptr), void),			\
+		      "pointer type mismatch in container_of_safe()");	\
+	IS_ERR_OR_NULL(__mptr) ? ERR_CAST(__mptr) :			\
+		((type *)(__mptr - offsetof(type, member))); })
+#endif
 
 /******************************************************************************
  * TSREC member structure/variables
