@@ -59,7 +59,7 @@ def _write_localversion(ctx):
         stable_scmversion_cmd = _get_status_at_path(ctx, "STABLE_SCMVERSIONS", '"${KERNEL_DIR}"')
     else:
         inputs = []
-        stable_scmversion_cmd = "echo '-maybe-dirty'"
+        stable_scmversion_cmd = "echo 'ss'"
 
     transitive_inputs = [ctx.attr.env[KernelEnvInfo].inputs]
     tools = ctx.attr.env[KernelEnvInfo].tools
